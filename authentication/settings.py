@@ -63,6 +63,7 @@ DJOSER = {
     'PASSWORD_RESET_CONFIRM_RETYPE' : True,
     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_RETYPE' :True,
+    'USER_CREATE_PASSWORD_RETYPE': True,
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SET_USERNAME_RETYPE' : True,
@@ -99,6 +100,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

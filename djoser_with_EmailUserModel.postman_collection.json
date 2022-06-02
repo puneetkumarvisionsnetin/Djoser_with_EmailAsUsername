@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "31422f1f-53d6-4396-a06c-fb55cfa543e0",
-		"name": "djoser_with_DefaultUserModel",
+		"name": "djoser_with_EmailUserModel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20645052"
 	},
@@ -307,7 +307,7 @@
 			"response": []
 		},
 		{
-			"name": "Set Username",
+			"name": "Set Username(email)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -360,7 +360,7 @@
 			"response": []
 		},
 		{
-			"name": "Reset Username",
+			"name": "Reset Username(email)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -396,7 +396,7 @@
 			"response": []
 		},
 		{
-			"name": "Reset Username Confirmation",
+			"name": "Reset Username Confirmation(email)",
 			"request": {
 				"method": "POST",
 				"header": [
