@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "31422f1f-53d6-4396-a06c-fb55cfa543e0",
+		"name": "djoser_with_DefaultUserModel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20645052"
+	},
+	"item": [
+		{
+			"name": "User Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user4@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "re_password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Activate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uid",
+							"value": "NQ",
+							"description": "recived form url sent at email",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b6dj5g-14ea8a96fccb2ecb254f6d02f5fc6f71",
+							"description": "received from url sent at email",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "After send Post request user is_active status got true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/activation/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"activation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Resend Activation E-mail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "userone@gmail.com",
+							"description": "Enter email already registered in Db else no message will be displayed because we will never let know who is registered on site.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/resend_activation/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"resend_activation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/me/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "userfourg@gmail.com",
+							"description": "by changing email id user will get deactivated",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/me/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "userfour@gmail.com",
+							"description": "this will change partially data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/me/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "current_password",
+							"value": "Test@1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/me/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Username",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "current_password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "new_username",
+							"value": "userfour",
+							"description": "if username set to email then given Url will be\nusers/set_email/",
+							"type": "text"
+						},
+						{
+							"key": "re_new_username",
+							"value": "userfournotsame",
+							"description": "it only asked when 'SET_USERNAME_RETYPE' : True in Djoser settings in settings.py",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/set_username/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"set_username",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Username",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user4@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/reset_username/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"reset_username",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Username Confirmation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uid",
+							"value": "NQ",
+							"type": "text"
+						},
+						{
+							"key": "new_username",
+							"value": "userfour4",
+							"description": "if username set to email then given Url will be\nusers/set_email/",
+							"type": "text"
+						},
+						{
+							"key": "re_new_username",
+							"value": "userfour4",
+							"description": "it only asked when 'SET_USERNAME_RETYPE' : True in Djoser settings in settings.py",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b6dkqd-9db8e5501ed18e57062ffb217a4dbbc0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/reset_username_confirm/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"reset_username_confirm",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "current_password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "new_password",
+							"value": "Test@1234",
+							"description": "if username set to email then given Url will be\nusers/set_email/",
+							"type": "text"
+						},
+						{
+							"key": "re_new_password",
+							"value": "Test@1234",
+							"description": "it only asked when 'SET_USERNAME_RETYPE' : True in Djoser settings in settings.py",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/set_password/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"set_password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"description": "the resent at email do not required jwt token"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "userfour@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/reset_password/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"reset_password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset PasswordConfirmation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uid",
+							"value": "NQ",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "b6dll9-855352495ea93d2988886a4ad8c03d20",
+							"type": "text"
+						},
+						{
+							"key": "new_password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "re_new_password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/users/reset_password_confirm/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"reset_password_confirm",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "userfour4",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/jwt/create/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT Refresh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "userfour4",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/jwt/create/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT Verify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "userfour4",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/auth/jwt/create/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
